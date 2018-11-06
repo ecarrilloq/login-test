@@ -12,7 +12,7 @@ public class Util {
 	
 	public static final String ISSUER = "https://valid.com";
 	public static final String KEY = "V@l1d2018*";
-	public static final long EXP_TIME = 86400; // 1 day	
+	public static final long EXP_TIME = 86400000; // 1 day	
 	
 	
 	

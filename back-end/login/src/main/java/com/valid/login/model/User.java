@@ -8,6 +8,7 @@ import javax.persistence.Id;
 public class User {
 	private @Id @GeneratedValue Long id;
 	private String username;
+	private String email;
 	private String hashedPassword;
 	
 	public User() {
@@ -16,6 +17,7 @@ public class User {
 	
 	public User(String username, String hashedPassword) {
 		this.username = username;
+		this.email = username+"@valid.com";
 		this.hashedPassword = hashedPassword;
 	}
 	
@@ -36,6 +38,13 @@ public class User {
 	}
 	public void setHashedPassword(String hashedPassword) {
 		this.hashedPassword = hashedPassword;
-	}	
-			
+	}
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+					
 }

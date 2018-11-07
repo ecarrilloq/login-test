@@ -14,8 +14,12 @@ public class LoadInitData {
 	@Bean
 	CommandLineRunner loadData(UserRepository repo) {
 		return args -> {
-			LoggerUtil.getLogger(LoadInitData.class).info("Adding User1 {}", repo.save(new User("admin",Util.getHashedPassword("admin"))).getUsername());
-			LoggerUtil.getLogger(LoadInitData.class).info("Adding User2 {}", repo.save(new User("user",Util.getHashedPassword("user"))).getUsername());			
+			LoggerUtil.getLogger(LoadInitData.class).info("Adding User {}", repo.save(new User("admin",Util.getHashedPassword("admin"))).getUsername());
+			LoggerUtil.getLogger(LoadInitData.class).info("Adding User {}", repo.save(new User("user",Util.getHashedPassword("user"))).getUsername());
+			LoggerUtil.getLogger(LoadInitData.class).info("Adding User {}", repo.save(new User("user1",Util.getHashedPassword("user1"))).getUsername());
+			LoggerUtil.getLogger(LoadInitData.class).info("Adding User {}", repo.save(new User("user2",Util.getHashedPassword("user2"))).getUsername());
+			LoggerUtil.getLogger(LoadInitData.class).info("Adding User {}", repo.save(new User("user3",Util.getHashedPassword("user3"))).getUsername());
+			LoggerUtil.getLogger(LoadInitData.class).info("Adding User {}", repo.save(new User("user4",Util.getHashedPassword("user4"))).getUsername());
 		};		
 	}
 }

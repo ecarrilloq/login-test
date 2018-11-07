@@ -23,7 +23,7 @@ public class UserService {
 	
 	public String login(String username, String password) {	
 		User user = userRep.findByUsername(username);
-		if (user.getHashedPassword().equals(Util.getHashedPassword(password))) {
+		if (user.getHashedPassword()!=null && user.getHashedPassword().equals(Util.getHashedPassword(password))) {
 			return Util.getToken(username);
 		}else {
 			return null;

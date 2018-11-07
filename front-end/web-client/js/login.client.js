@@ -4,7 +4,7 @@ var serviceUrl = "http://localhost:8080"
 var token = "";
 
 form.onsubmit = function (e) {
-    
+
     e.preventDefault();
 
     var formdata = {};
@@ -33,7 +33,7 @@ function login(formdata) {
         } else if (msg.status == "401") {
             alert("Wrong username or password");
         } else {
-            alert("Request completed with Message" + msg.responseText);
+            alert("Request completed with Message " + msg.responseText);
         }
     });
 }

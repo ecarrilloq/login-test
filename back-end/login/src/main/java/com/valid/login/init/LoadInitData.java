@@ -11,15 +11,18 @@ import com.valid.login.util.Util;
 
 @Configuration
 public class LoadInitData {
+	
+	private static final String ADD_USER_MSG = "Adding User {}";
+	
 	@Bean
 	CommandLineRunner loadData(UserRepository repo) {
 		return args -> {
-			LoggerUtil.getLogger(LoadInitData.class).info("Adding User {}", repo.save(new User("admin",Util.getHashedPassword("admin"))).getUsername());
-			LoggerUtil.getLogger(LoadInitData.class).info("Adding User {}", repo.save(new User("user",Util.getHashedPassword("user"))).getUsername());
-			LoggerUtil.getLogger(LoadInitData.class).info("Adding User {}", repo.save(new User("user1",Util.getHashedPassword("user1"))).getUsername());
-			LoggerUtil.getLogger(LoadInitData.class).info("Adding User {}", repo.save(new User("user2",Util.getHashedPassword("user2"))).getUsername());
-			LoggerUtil.getLogger(LoadInitData.class).info("Adding User {}", repo.save(new User("user3",Util.getHashedPassword("user3"))).getUsername());
-			LoggerUtil.getLogger(LoadInitData.class).info("Adding User {}", repo.save(new User("user4",Util.getHashedPassword("user4"))).getUsername());
+			LoggerUtil.getLogger(LoadInitData.class).info(ADD_USER_MSG, repo.save(new User("admin",Util.getHashedPassword("admin"))).getUsername());
+			LoggerUtil.getLogger(LoadInitData.class).info(ADD_USER_MSG, repo.save(new User("user",Util.getHashedPassword("user"))).getUsername());
+			LoggerUtil.getLogger(LoadInitData.class).info(ADD_USER_MSG, repo.save(new User("user1",Util.getHashedPassword("user1"))).getUsername());
+			LoggerUtil.getLogger(LoadInitData.class).info(ADD_USER_MSG, repo.save(new User("user2",Util.getHashedPassword("user2"))).getUsername());
+			LoggerUtil.getLogger(LoadInitData.class).info(ADD_USER_MSG, repo.save(new User("user3",Util.getHashedPassword("user3"))).getUsername());
+			LoggerUtil.getLogger(LoadInitData.class).info(ADD_USER_MSG, repo.save(new User("user4",Util.getHashedPassword("user4"))).getUsername());
 		};		
 	}
 }
